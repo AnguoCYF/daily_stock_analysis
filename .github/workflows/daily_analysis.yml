@@ -65,7 +65,7 @@ jobs:
           LITELLM_CONFIG: ${{ vars.LITELLM_CONFIG || secrets.LITELLM_CONFIG }}
           LITELLM_CONFIG_YAML: ${{ vars.LITELLM_CONFIG_YAML || secrets.LITELLM_CONFIG_YAML }}
           LITELLM_API_KEY: ${{ secrets.LITELLM_API_KEY }}
-          LITELLM_MODEL: ${{ vars.LITELLM_MODEL || secrets.LITELLM_MODEL }}
+          # LITELLM_MODEL: ${{ vars.LITELLM_MODEL || secrets.LITELLM_MODEL }}
           
           # Gemini AI（主选）
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -88,20 +88,33 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL || secrets.ANTHROPIC_MODEL || 'claude-3-5-sonnet-20241022' }}
 
+          # 多渠道
           LLM_CHANNELS: ${{ vars.LLM_CHANNELS || secrets.LLM_CHANNELS }}
+
+          LLM_GEMINI_PROTOCOL: ${{ vars.LLM_GEMINI_PROTOCOL || secrets.LLM_GEMINI_PROTOCOL || 'gemini' }}
           LLM_GEMINI_API_KEY: ${{ secrets.LLM_GEMINI_API_KEY || secrets.GEMINI_API_KEY }}
           LLM_GEMINI_MODELS: ${{ vars.LLM_GEMINI_MODELS || secrets.LLM_GEMINI_MODELS }}
+          LLM_GEMINI_ENABLED: ${{ vars.LLM_GEMINI_ENABLED || secrets.LLM_GEMINI_ENABLED || 'true' }}
+
           LLM_GLM_BASE_URL: ${{ vars.LLM_GLM_BASE_URL || secrets.LLM_GLM_BASE_URL }}
           LLM_GLM_API_KEY: ${{ secrets.LLM_GLM_API_KEY }}
           LLM_GLM_MODELS: ${{ vars.LLM_GLM_MODELS || secrets.LLM_GLM_MODELS }}
           LLM_GLM_PROTOCOL: ${{ vars.LLM_GLM_PROTOCOL || secrets.LLM_GLM_PROTOCOL }}
+          LLM_GLM_ENABLED: ${{ vars.LLM_GLM_ENABLED || secrets.LLM_GLM_ENABLED || 'true' }}
+
           LLM_QWEN_BASE_URL: ${{ vars.LLM_QWEN_BASE_URL || secrets.LLM_QWEN_BASE_URL }}
           LLM_QWEN_API_KEY: ${{ secrets.LLM_QWEN_API_KEY }}
           LLM_QWEN_MODELS: ${{ vars.LLM_QWEN_MODELS || secrets.LLM_QWEN_MODELS }}
           LLM_QWEN_PROTOCOL: ${{ vars.LLM_QWEN_PROTOCOL || secrets.LLM_QWEN_PROTOCOL }}
+          LLM_QWEN_ENABLED: ${{ vars.LLM_QWEN_ENABLED || secrets.LLM_QWEN_ENABLED || 'true' }}
+
+          LLM_DEEPSEEK_PROTOCOL: ${{ vars.LLM_DEEPSEEK_PROTOCOL || secrets.LLM_DEEPSEEK_PROTOCOL || 'openai' }}
           LLM_DEEPSEEK_BASE_URL: ${{ vars.LLM_DEEPSEEK_BASE_URL || secrets.LLM_DEEPSEEK_BASE_URL }}
           LLM_DEEPSEEK_API_KEY: ${{ secrets.LLM_DEEPSEEK_API_KEY || secrets.DEEPSEEK_API_KEY }}
           LLM_DEEPSEEK_MODELS: ${{ vars.LLM_DEEPSEEK_MODELS || secrets.LLM_DEEPSEEK_MODELS }}
+          LLM_DEEPSEEK_ENABLED: ${{ vars.LLM_DEEPSEEK_ENABLED || secrets.LLM_DEEPSEEK_ENABLED || 'true' }}
+          
+          LITELLM_MODEL: ${{ vars.LITELLM_MODEL || secrets.LITELLM_MODEL }}
           LITELLM_FALLBACK_MODELS: ${{ vars.LITELLM_FALLBACK_MODELS || secrets.LITELLM_FALLBACK_MODELS }}
           AGENT_LITELLM_MODEL: ${{ vars.AGENT_LITELLM_MODEL || secrets.AGENT_LITELLM_MODEL }}
 
